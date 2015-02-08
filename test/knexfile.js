@@ -45,6 +45,7 @@ var testConfigs = {
     connection: testConfig.mysql || {
       database: "knex_test",
       user: "root",
+      password: '1FNYbsJE',
       charset: 'utf8'
     },
     pool: _.extend({}, pool, {
@@ -110,6 +111,7 @@ var testConfigs = {
     migrations: migrations,
     seeds: seeds
   }
+
 };
 
 // export only copy the specified dialects
