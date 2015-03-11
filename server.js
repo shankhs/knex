@@ -1,6 +1,6 @@
 'use strict';
 console.log('Getting knex');
-/*
+
 var knex = require('./knex')({
   client: 'mongo',
   connection: {
@@ -9,7 +9,7 @@ var knex = require('./knex')({
     database: 'passport'
   }
 });
-*/
+/*
 var knex = require('./knex')({
   client: 'mysql',
   connection: {
@@ -19,7 +19,7 @@ var knex = require('./knex')({
     database: 'knex_test'
   }
 });
-
+*/
 //debugger;
 console.log('got knex');
 /*
@@ -37,6 +37,17 @@ knex.raw('select * from accounts where email is not NULL').then(
   console.error(error);
 });
 */
+/*knex.schema.createTable('users', function(table) {
+  console.log('creating tables');
+  table.increments('id');
+  table.string('user_name');
+}).then (function(msg){
+  console.log('Completed creation');
+  console.log(msg);
+  return {inserted: true};
+}).finally(function(){
+  knex.destroy();
+});*/
 knex.schema.createTable('users', function(table) {
   console.log('creating tables');
   table.increments('id');
@@ -48,4 +59,3 @@ knex.schema.createTable('users', function(table) {
 }).finally(function(){
   knex.destroy();
 });
-
